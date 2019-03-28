@@ -12,6 +12,8 @@
 		E7497A222243ACE7004988A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7497A202243ACE7004988A4 /* Main.storyboard */; };
 		E7497A242243ACE7004988A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7497A232243ACE7004988A4 /* Assets.xcassets */; };
 		E7497A272243ACE7004988A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7497A252243ACE7004988A4 /* LaunchScreen.storyboard */; };
+		E7497A5122490521004988A4 /* GetNowWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497A5022490521004988A4 /* GetNowWeather.swift */; };
+		E7497A5322490587004988A4 /* Get3hoursWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7497A5222490587004988A4 /* Get3hoursWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E7497A232243ACE7004988A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7497A262243ACE7004988A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7497A282243ACE7004988A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7497A5022490521004988A4 /* GetNowWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNowWeather.swift; sourceTree = "<group>"; };
+		E7497A5222490587004988A4 /* Get3hoursWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get3hoursWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				E7497A1C2243ACE7004988A4 /* AppDelegate.swift */,
 				E7497A1E2243ACE7004988A4 /* ViewController.swift */,
+				E7497A5222490587004988A4 /* Get3hoursWeather.swift */,
+				E7497A5022490521004988A4 /* GetNowWeather.swift */,
 				E7497A202243ACE7004988A4 /* Main.storyboard */,
 				E7497A232243ACE7004988A4 /* Assets.xcassets */,
 				E7497A252243ACE7004988A4 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7497A1F2243ACE7004988A4 /* ViewController.swift in Sources */,
+				E7497A5322490587004988A4 /* Get3hoursWeather.swift in Sources */,
 				E7497A1D2243ACE7004988A4 /* AppDelegate.swift in Sources */,
+				E7497A5122490521004988A4 /* GetNowWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
