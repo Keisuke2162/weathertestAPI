@@ -31,7 +31,7 @@ class GetNowWeather {
     
     struct wind: Codable {
         let speed: Float
-        let deg: Int
+        let deg: Int?
     }
     
     struct clouds: Codable {
@@ -67,12 +67,66 @@ class GetNowWeather {
     let originalUrl = "http://api.openweathermap.org/data/2.5/weather?q="
     let units = "&units=metric"
     let appKey = "&APPID=40a48ba11c0ea30426196bab04221fec"
+    var now: Double = 0.00
+    var max: Double = 0.00
+    var min: Double = 0.00
+    var flag: Bool = false
     
     func createUrl(city: String) -> String{
         let requestUrl = originalUrl + city + units + appKey
         print(requestUrl)
         //request(requestUrl: requestUrl)
         return requestUrl
+    }
+    
+    func request(requestUrl: String) ->  (now: Double, max: Double, min: Double){
+
+        
+        guard let url = URL(string: requestUrl) else {
+            self.now = 99.999
+            self.max = 99.999
+            self.min = 99.999
+            return (now, max, min)
+        }
+        
+        let request = URLRequest(url: url)
+        
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request) { (data: Data?,
+            response: URLResponse?, error: Error?) in
+            
+            guard error == nil else {
+                return
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            let resultData = try! JSONDecoder().decode(openWeatherMap.self, from: data)
+            
+            //print(resultData.main.temp)
+            //print(resultData.main.temp_max)
+            //print(resultData.main.temp_min)
+            
+            //self. = resultData.weather[0].main
+            self.now = Double(resultData.main.temp)
+            self.max = Double(resultData.main.temp_max)
+            self.min = Double(resultData.main.temp_min)
+            
+            self.flag = true
+            print("true")
+            
+            
+        }
+        task.resume()
+        while flag == false{
+            print("LoadNow...")
+            sleep(1)
+        }
+        return (now, max, min)
+        
     }
     
 }
