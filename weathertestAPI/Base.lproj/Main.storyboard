@@ -18,42 +18,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb4-y8-OYD">
-                                <rect key="frame" x="0.0" y="337" width="375" height="171"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WU-qk-wfn">
-                                        <rect key="frame" x="0.0" y="0.0" width="750" height="171"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="750" id="7RT-32-QRy"/>
-                                            <constraint firstAttribute="height" constant="171" id="oL8-tw-NYd"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eol-aw-GAD" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="339" width="375" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwS-8j-TVq">
+                                <rect key="frame" x="16" y="180" width="108" height="50"/>
                                 <constraints>
-                                    <constraint firstItem="0WU-qk-wfn" firstAttribute="top" secondItem="Eb4-y8-OYD" secondAttribute="top" id="3wc-bB-4Be"/>
-                                    <constraint firstItem="0WU-qk-wfn" firstAttribute="leading" secondItem="Eb4-y8-OYD" secondAttribute="leading" id="M9F-h1-3Vg"/>
-                                    <constraint firstAttribute="bottom" secondItem="0WU-qk-wfn" secondAttribute="bottom" id="fpV-D1-5dv"/>
-                                    <constraint firstAttribute="trailing" secondItem="0WU-qk-wfn" secondAttribute="trailing" id="kOd-Vj-YnL"/>
+                                    <constraint firstAttribute="height" constant="50" id="JT4-UB-EbL"/>
+                                    <constraint firstAttribute="width" constant="108" id="qJZ-w2-f3W"/>
                                 </constraints>
-                            </scrollView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYK-Tp-fZ5">
+                                <rect key="frame" x="251" y="206" width="108" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="11i-u8-sQp"/>
+                                    <constraint firstAttribute="width" constant="108" id="wfU-Ui-640"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OEk-rc-qTV">
+                                <rect key="frame" x="16" y="20" width="150" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Jw2-q9-wYr"/>
+                                    <constraint firstAttribute="width" constant="120" id="NPN-zH-mGj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-sK-cAj">
+                                <rect key="frame" x="16" y="617" width="64" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Liverpool"/>
+                                <connections>
+                                    <action selector="city1button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUX-Ad-66w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SA5-MA-dnB">
+                                <rect key="frame" x="102" y="617" width="82" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Bristol"/>
+                                <connections>
+                                    <action selector="city2button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FPl-UV-AiP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KW0-Tg-eLv">
+                                <rect key="frame" x="210" y="617" width="82" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Manchester"/>
+                                <connections>
+                                    <action selector="city3button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQq-VE-Fsm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nej-fS-Qza">
+                                <rect key="frame" x="297" y="617" width="52" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="London"/>
+                                <connections>
+                                    <action selector="city4button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6A-gy-9Bf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC7-Yf-CLb">
+                                <rect key="frame" x="329" y="20" width="30" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="czS-FV-wpz"/>
+                                    <constraint firstAttribute="height" constant="25" id="ghv-kY-rph"/>
+                                </constraints>
+                                <state key="normal" image="Setting"/>
+                                <connections>
+                                    <segue destination="WT1-4v-Q5S" kind="show" id="e9K-12-jwm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eb4-y8-OYD" secondAttribute="bottom" constant="159" id="9WX-yC-nMI"/>
-                            <constraint firstItem="Eb4-y8-OYD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RIN-xS-5x8"/>
-                            <constraint firstItem="Eb4-y8-OYD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cgC-oe-1mh"/>
-                            <constraint firstItem="Eb4-y8-OYD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="317" id="gzt-HZ-ceg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KW0-Tg-eLv" secondAttribute="bottom" constant="20" id="238-xb-1Pp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VNR-sK-cAj" secondAttribute="bottom" constant="20" id="5XE-DB-qY5"/>
+                            <constraint firstItem="DwS-8j-TVq" firstAttribute="top" secondItem="OEk-rc-qTV" secondAttribute="bottom" constant="40" id="875-6x-89R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dC7-Yf-CLb" secondAttribute="trailing" constant="16" id="8ig-xc-0QK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nej-fS-Qza" secondAttribute="trailing" constant="26" id="8nm-DW-nvj"/>
+                            <constraint firstItem="dC7-Yf-CLb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C9B-qU-dOy"/>
+                            <constraint firstItem="VNR-sK-cAj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cr2-EL-NL4"/>
+                            <constraint firstItem="nej-fS-Qza" firstAttribute="leading" secondItem="KW0-Tg-eLv" secondAttribute="trailing" constant="5" id="Ls1-ab-oof"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SA5-MA-dnB" secondAttribute="bottom" constant="20" id="TgO-6i-abV"/>
+                            <constraint firstItem="dC7-Yf-CLb" firstAttribute="leading" secondItem="OEk-rc-qTV" secondAttribute="trailing" constant="163" id="W4K-PM-92l"/>
+                            <constraint firstItem="NYK-Tp-fZ5" firstAttribute="top" secondItem="dC7-Yf-CLb" secondAttribute="bottom" constant="161" id="WOs-42-2L3"/>
+                            <constraint firstItem="KW0-Tg-eLv" firstAttribute="leading" secondItem="SA5-MA-dnB" secondAttribute="trailing" constant="26" id="aNY-gw-9DQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OEk-rc-qTV" secondAttribute="trailing" constant="209" id="eTY-Gm-BTw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nej-fS-Qza" secondAttribute="bottom" constant="20" id="ghj-My-0uE"/>
+                            <constraint firstItem="OEk-rc-qTV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hwl-NM-1zw"/>
+                            <constraint firstItem="OEk-rc-qTV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kms-sb-0VU"/>
+                            <constraint firstItem="SA5-MA-dnB" firstAttribute="leading" secondItem="VNR-sK-cAj" secondAttribute="trailing" constant="22" id="njb-Ac-S8C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="weatherView" destination="0WU-qk-wfn" id="2eE-do-9kM"/>
+                        <outlet property="dateLabel" destination="NYK-Tp-fZ5" id="0Z9-C0-nE7"/>
+                        <outlet property="lineChart" destination="eol-aw-GAD" id="nx7-KL-oeT"/>
+                        <outlet property="tempLabel" destination="DwS-8j-TVq" id="lib-lt-iPS"/>
+                        <outlet property="weatherImage" destination="OEk-rc-qTV" id="8v2-Xx-4be"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
+        <!--Choose Country-->
+        <scene sceneID="Jk4-XE-2mi">
+            <objects>
+                <viewController id="WT1-4v-Q5S" customClass="ChooseCountry" customModule="weathertestAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Us-cf-RLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jpB-1Y-nCm"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="weatherView" id="m7Q-6F-4rQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySh-VB-MLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="134"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Setting" width="256" height="256"/>
+    </resources>
 </document>
